@@ -1,0 +1,123 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+    header, footer {
+      background-color: #0057b8;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: relative;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #003f7f;
+      color: white;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      box-sizing: border-box;
+      display: flex;
+    }
+    .sidebar img {
+      width: 80px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .sidebar h3 {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .sidebar a {
+      color: white;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+      border-bottom: 1px solid #004f99;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .sidebar a:hover,
+    .sidebar a.active-link {
+      background-color: #004494;
+      font-weight: bold;
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .hidden {
+      display: none !important;
+    }
+    input, textarea, button, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #0057b8;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #004494;
+    }
+    #login-section {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #0057b8;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .sidebar {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 999;
+        background-color: #003f7f;
+      }
+      .sidebar.open {
+        display: flex;
+      }
+      .container {
+        flex-direction: column;
+      }
+    }

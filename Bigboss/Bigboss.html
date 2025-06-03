@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clinic Management System</title>
+    <link rel="stylesheet" href="Bigboss.css" />
+  </head>
+  <body class="login-background">
+    <header>
+      <div class="title-group">
+        <h1>Clinic Management System</h1>
+        <h2>Immaculada Concepcion College</h2>
+      </div>
+      <button id="logout-btn" class="hidden">Logout</button>
+    </header>
+
+    <nav id="sidebar" class="hidden" aria-label="Sidebar Navigation">
+      <div class="sidebar-logo">
+        <img
+          src="https://scontent.fmnl9-4.fna.fbcdn.net/v/t39.30808-1/327393288_1141749313152691_5735362343305994511_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeEMl-nSOLf4q_sgcxGvDzlDFoie9MLpnLsWiJ70wumcu4_XR2UpEIs7G_mhV_xGDNgKyKAsAU8H3jwiJUxMCAUW&_nc_ohc=ZYZwa2vWPbsQ7kNvwHlcpg5&_nc_oc=AdmC7t4xGfAf1PxSMA9_SQn5g8xCmjqCgiXmCrIC3igANf-jnSruisMUIMcFYLD-icU&_nc_zt=24&_nc_ht=scontent.fmnl9-4.fna&_nc_gid=jstYQ6Z7HC8U4l9a7PAzoA&oh=00_AfLsyxTCDC08l2GM4wXzJzqPykbQln5z4zbl9xiIIBnYKw&oe=683E685D"
+          alt="Clinic Logo"
+        />
+      </div>
+      <a href="#" onclick="showSection('dashboard'); return false;"
+        >Dashboard</a
+      >
+      <a href="#" onclick="showSection('student-records'); return false;"
+        >Student Info</a
+      >
+      <a href="#" onclick="showSection('appointments'); return false;"
+        >Appointment Schedule</a
+      >
+      <a href="#" onclick="showSection('checkup'); return false;">Checkup</a>
+      <a href="#" onclick="showSection('medical-inventory'); return false;"
+        >Medical Inventory</a
+      >
+    </nav>
+
+    <main id="main-content">
+      <section id="login-section">
+        <h2>Login</h2>
+        <div id="login-error">Invalid username or password</div>
+        <input
+          type="text"
+          id="login-username"
+          placeholder="Username"
+          aria-label="Username"
+        />
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Password"
+          aria-label="Password"
+        />
+        <button id="login-btn">Login</button>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <h2 class="text-2xl font-bold mb-4">Dashboard Overview</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Appointments Summary -->
+          <div class="bg-white p-4 rounded shadow">
+            <h3 class="text-lg font-semibold mb-2">Upcoming Appointments</h3>
+            <ul id="dashboard-appointments" class="text-sm space-y-1"></ul>
+          </div>
+
+          <!-- Checkup Summary -->
+          <div class="bg-white p-4 rounded shadow">
+            <h3 class="text-lg font-semibold mb-2">Recent Checkups</h3>
+            <ul id="dashboard-checkups" class="text-sm space-y-1"></ul>
+          </div>
+
+          <!-- Inventory Summary -->
+          <div class="bg-white p-4 rounded shadow">
+            <h3 class="text-lg font-semibold mb-2">Available Stocks</h3>
+            <ul id="dashboard-inventory" class="text-sm space-y-1"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Student Info -->
+      <section id="student-records" class="hidden" tabindex="-1">
+        <h2>Student Info</h2>
+        <form id="student-info-form">
+          <input
+            type="text"
+            id="checkup-name"
+            placeholder="Full Name"
+            class="input"
+            required
+          />
+          <input
+            type="text"
+            id="checkup-id"
+            placeholder="Student ID"
+            class="input"
+            required
+          />
+          <input
+            type="text"
+            id="checkup-grade"
+            placeholder="Grade & Section"
+            class="input"
+            required
+          />
+          <input
+            type="number"
+            id="checkup-age"
+            placeholder="Age"
+            class="input"
+            required
+          />
+          <input
+            type="text"
+            id="checkup-height"
+            placeholder="Height (cm)"
+            class="input"
+            required
+          />
+          <input
+            type="text"
+            id="checkup-weight"
+            placeholder="Weight (kg)"
+            class="input"
+            required
+          />
+          <input
+            type="text"
+            id="checkup-temp"
+            placeholder="Temperature (°C)"
+            class="input"
+            required
+          />
+          <input
+            type="text"
+            id="checkup-bp"
+            placeholder="Blood Pressure"
+            class="input"
+            required
+          />
+          <input
+            type="text"
+            id="checkup-hr"
+            placeholder="Heart Rate (bpm)"
+            class="input"
+          />
+
+          <button type="submit">submit</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th><b>Name</b></th>
+              <th><b>id</b></th>
+              <th><b>Gr/Sec</b></th>
+              <th><b>Age</b></th>
+              <th><b>Height</b></th>
+              <th><b>Weight</b></th>
+              <th><b>Tp</b></th>
+              <th><b>BP</b></th>
+              <th><b>HR</b></th>
+              <th><b>Action</b></th>
+            </tr>
+          </thead>
+          <tbody id="Info-table"></tbody>
+        </table>
+      </section>
+
+      <!-- Appointments -->
+      <section id="appointments" class="hidden" tabindex="-1">
+        <h2>Appointment Schedule</h2>
+        <form id="appointment-form">
+          <input
+            type="text"
+            id="appointment-name"
+            placeholder="Gr/Section"
+            required
+          />
+          <input type="date" id="appointment-date" required />
+          <input type="time" id="appointment-time" required />
+          <input
+            type="text"
+            id="appointment-reason"
+            placeholder="Reason"
+            required
+          />
+          <button type="submit">Schedule</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th><b>Gr/Sec</b></th>
+              <th><b>Date</b></th>
+              <th><b>Time</b></th>
+              <th><b>Reason</b></th>
+            </tr>
+          </thead>
+          <tbody id="appointments-table"></tbody>
+        </table>
+      </section>
+
+      <!-- Checkup -->
+      <section id="checkup" class="hidden" tabindex="-1">
+        <h2>Checkup</h2>
+        <form id="checkup-form">
+          <input
+            type="text"
+            id="checkup-complaint"
+            placeholder="Chief Complaint / Reason for Visit"
+            class="input"
+            required
+          />
+          <textarea
+            id="checkup-assessment"
+            placeholder="Assessment / Observations"
+          ></textarea>
+          <textarea id="checkup-action" placeholder="Action Taken"></textarea>
+          <input type="date" id="checkup-date" class="input" required />
+          <button type="submit">Add Checkup</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th><b>Reason</b></th>
+              <th><b>Observations</b></th>
+              <th><b>Action</b></th>
+              <th><b>Date</b></th>
+            </tr>
+          </thead>
+          <tbody id="Checkup-table"></tbody>
+        </table>
+      </section>
+
+      <!-- Inventory -->
+      <section id="medical-inventory" class="hidden" tabindex="-1">
+        <h2>Medical Inventory</h2>
+        <form id="inventory-form">
+          <input type="text" id="item-id" placeholder="Item ID" required />
+          <input type="text" id="item-name" placeholder="Item Name" required />
+          <input
+            type="number"
+            id="item-quantity"
+            placeholder="Quantity"
+            required
+          />
+          <input
+            type="number"
+            id="item-uses"
+            placeholder="Number of Uses"
+            required
+          />
+          <button type="submit">Save Item</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <td><b>ID</b></td>
+              <td><b>Name</b></td>
+              <td><b>Quantity</b></td>
+              <td><b>Used</b></td>
+              <td><b>Remaining</b></td>
+              <td><b>Edit/Delete</b></td>
+            </tr>
+          </thead>
+          <tbody id="Inventory-table"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="Bigboss.js"></script>
+  </body>
+</html>

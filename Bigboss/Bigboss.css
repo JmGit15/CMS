@@ -1,0 +1,245 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f9;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0057b8;
+  color: white;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+header .title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+header h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+#logout-btn {
+  background-color: #e65353;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#logout-btn:hover {
+  background-color: #e42a2a;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 220px;
+  background-color: #003366;
+  height: 100vh;
+  color: white;
+  padding-top: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#sidebar a {
+  display: block;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar a:hover {
+  background-color: #0057b8;
+}
+
+/* Main content */
+#main-content {
+  margin-left: 220px;
+  margin-top: 70px;
+  padding: 20px;
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+}
+
+/* Login background */
+body.login-background {
+  background-image: url('https://scontent.fmnl9-2.fna.fbcdn.net/v/t39.30808-6/488532528_1064614869044453_343971338913758877_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFOgdfnxirMXyTUHUvAl1vEyzZtuPePMBPLNm24948wEyMVrOplQEshz7v-eEM0LIj--FnDLUy5RtS5udQPZho_&_nc_ohc=Sv8_rNQ2jLsQ7kNvwGnNhle&_nc_oc=Adk0JCbadDz1LNW1rLeyIoTBjM4BFg4pKs7XJS2ubYgZu_UELACpevjUsKyE5MXoXz8&_nc_zt=23&_nc_ht=scontent.fmnl9-2.fna&_nc_gid=wZ_ktgzlEbidso6kt83RHA&oh=00_AfLYK76HRfQX1MDkT2c6zdh3Rv6DX9bTuq7pl44z5ah4VA&oe=683E4BC8');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#login-section {
+  max-width: 320px;
+  margin: 120px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+}
+
+#login-section input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#login-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0057b8;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#login-section button:hover {
+  background-color: #004494;
+}
+
+#login-error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: none;
+}
+
+/* Section Styles */
+section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+section h2 {
+  margin-top: 0;
+  color: #0057b8;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea,
+form button {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form button {
+  background-color: #0057b8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #004494;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table th {
+  background-color: #0057b8;
+  color: white;
+}
+
+table td {
+  background-color: #0057b8;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.input {
+  width: 100%;
+}
+
+/* Logo */
+.sidebar-logo {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.sidebar-logo img {
+  max-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
